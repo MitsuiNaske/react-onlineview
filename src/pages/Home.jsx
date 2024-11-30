@@ -4,6 +4,9 @@ const Home = () => {
   return (
     <div className="h-screen pt-5">
       <div className="h-3/4 w-full flex justify-center">
+        <div className="min-w-max min-h-max p-5 cursor-pointer flex text-center">
+          <img src="/src/assets/slider/sliderback.svg" alt="" />
+        </div>
         <div className="w-2/3 h-full flex justify-center">
           <img
             src="/src/assets/afisha-img/noimg.png"
