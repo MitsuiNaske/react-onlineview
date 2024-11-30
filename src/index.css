@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  background-color: #14161A;
+}
+
+:root {
+  font-family: "Inter", sans-serif;
+  color-scheme: Dark;
+}
+
+.decoration-nav-gradient {
+  position: relative;
+}
+.decoration-nav-gradient::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 0) 0.17%,
+    #ffbe98 15.74%,
+    #ffffff 50%,
+    #ffbe98 83.22%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out;
+}
+.decoration-nav-gradient:hover::after {
+  transform: scaleX(1);
+}
