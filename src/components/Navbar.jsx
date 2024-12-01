@@ -49,19 +49,49 @@ const Navbar = () => {
           </a>
         </div>
         <div className="lg:hidden md:flex-col justify-end">
-          <button onClick={toggleNavbar} className="fixed top-10 right-5 z-50">
+          <button onClick={toggleNavbar} className="top-10 right-5 z-30">
             {mobileDrawerOpen ? <X /> : <Menu />}
           </button>
         </div>
         {mobileDrawerOpen && (
-          <div className="fixed top-0 left-0 w-full h-screen bg-black opacity-75 z-50 lg:hidden flex-col flex">
-            <div className="flex justify-end">
-              <button
-                onClick={toggleNavbar}
-                className="fixed top-10 right-5 z-50"
-              >
-                {mobileDrawerOpen ? <X /> : <Menu />}
-              </button>
+          <div className="fixed top-0 left-0 w-full h-screen bg-black bg-opacity-100 z-20 lg:hidden flex-col flex items-center ">
+            <button onClick={toggleNavbar} className="fixed top-10 right-5 z-30">
+            {mobileDrawerOpen ? <X /> : <Menu />}
+          </button>
+            <div className="pt-20 gap-10 flex flex-col">
+              <ul className="flex flex-col justify-center items-center gap-8">
+                {navItems.map((item, index) => (
+                  <li key={index} className="">
+                    <a href={item.href} onClick={() => setMobileDrawerOpen(false)}>{item.label}</a>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex justify-center items-center gap-5">
+                <a
+                  href="#"
+                  className="px-6 py-2 bg-[#FFBE98] rounded-md text-[#F2F2F2] text-base font-normal "
+                  onClick={() => setMobileDrawerOpen(false)}
+                >
+                  Попробовать бесплатно
+                </a>
+                <a href="#"
+                onClick={() => setMobileDrawerOpen(false)}>
+                  <img
+                    src="/src/assets/search-ico.svg"
+                    alt=""
+                    className="size-8"
+                  />
+                </a>
+                <a href="#"
+                onClick={() => setMobileDrawerOpen(false)}>
+                  <img
+                    src="/src/assets/person-ico.svg"
+                    alt=""
+                    className="size-8"
+                  />
+                </a>
+              </div>
             </div>
           </div>
         )}
